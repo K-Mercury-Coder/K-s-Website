@@ -1,0 +1,137 @@
+<!-- 你好，我是注释 -->
+
+<!DOCTYPE html> <!-- 文件类型为html -->
+<html lang="zh-CN">
+    <!-- 指定主要语言和区域 
+     微格式：页面内如果有其他语言内容，可以局部设置：
+    <p lang="en">This is English text.</p>
+    -->
+
+<!-- 深色模式切换 -->
+<button id="theme-toggle">🌙</button>
+
+<!-- 多语言切换 -->
+<select id="language-select">
+    <option value="zh-CN">Chinese</option>
+    <option value="en">English</option>
+</select>
+
+<!-- 加载动画 -->
+<div class="loading-spinner"></div>
+
+<!-- 雪花❄️示例配置界面 -->
+<div class="snow-settings">
+    <label>雪花速度:</label>
+    <input type="range" min="1" max="30" value="9" id="snow-speed">
+    <span>当前: <span id="speed-value">9</span>（数值越小越快）</span>
+</div>
+
+
+<script>
+// 用户调整时的处理
+document.getElementById('snow-speed').addEventListener('input', function(e) {
+    const speedValue = e.target.value;
+    document.getElementById('speed-value').textContent = speedValue;
+    
+    // 更新雪花动画速度
+    updateSnowflakeSpeed(speedValue);
+    
+    // 或者重新初始化雪花
+    initSnowfall(speedValue);
+});
+</script>
+
+<meta charset="UTF-8"> <!-- meta 标签用于定义页面的元数据; charset="UTF-8" 指定文档使用UTF-8字符编码-->
+<head> <!-- 头部 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 视口设置 -->
+    
+    <!-- 添加网页描述（利于SEO - Search Engine Optimization）
+     <meta name="description" content="Karima的个人网站,分享技术和生活"> 
+     -->
+
+    <title> Karima's Website </title> <!-- 标题 -->
+    <link rel="stylesheet" href="style.css"> <!-- 指定链接关系是样式表 + 链接到同一目录下的style.css文件 -->
+</head> <!-- 文档头部结束标签 -->
+
+ <!-- 主体 -->
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Contents</a></li>
+                <li><a href="about.html">About me</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="portfolio.html">Creations</a></li>
+            </ul>
+        </nav>
+
+        <!-- 搜索框 🔍 -->
+        <div class= "search-box">
+            <input type = "text" placeholder = "Search...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main>
+        <!-- 英雄区域（可添加背景图） -->
+        <section id="hero">
+            <h1>Welcome to my personal website</h1>
+            <p>Idealist Needs Timeless Journey</p>
+        </section>
+        
+        <section id="about" class="section">
+            <h2>About me</h2>
+            <div class = "about-content">
+                <div class = "about-text">
+                    <p> I am Xinyan. </p>
+                    <h3>Interest</h3>
+
+                    <!-- 无序列表（<ul> + <li>）: 项目顺序不重要; 默认显示为黑点（•) -->
+                    <!-- 有序列表（<o2l> + <li>）: 项目有特定顺序; 默认显示为数字（1. 2. 3.) -->
+
+                    <ul class = "Interest"> <!-- 无序列表中的列表项 -->
+                        <!-- <li> 是 List Item（列表项）的缩写，用于在HTML中创建列表的每一个项目 -->
+                        <li> Java-Deepseek <!-- 这是列表项 -->
+                        <li> HTML5-Deepseek
+                        <li> Photography-Gene
+                        <li> Editing-Gift
+                    </ul>
+                </div>
+        </section>
+
+        <!-- 作品展示 -->
+        <section id = "portfolio" class="section">
+
+        <!-- 新增：博客预览 -->
+        <section id= "blog-preview" class="section">
+        <h2>Latest</h2>
+        <div class="articles">
+            <article>
+                <time datetime="2025.12.15.">2025.12.15.</time>
+                <h3><a href="blog/post1.html">Learning Web Development</a></h3>
+                <p>Codes:</p>
+            </article>
+        </div>
+        <a href="blog.html" class="btn">See all my blogs</a>
+    </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <a href="https://space.bilibili.com/479641319?spm_id_from=333.1007.0.0" aria-label="bilibili">
+                    <i>Bilibili Icon</i>
+                </a>
+            </div>
+        </div>
+
+        <p>&copy; 2026. My Personal Website</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
