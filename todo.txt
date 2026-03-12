@@ -1,0 +1,24 @@
+<!-- 加载动画 -->
+<div class="loading-spinner"></div>
+
+<!-- 雪花❄️示例配置界面 -->
+<div class="snow-settings">
+    <label>Snow Speed</label>
+    <input type="range" min="1" max="30" value="9" id="snow-speed">
+    <span>Current: <span id="speed-value">9</span>（数值越小越快）</span>
+</div>
+
+
+<script>
+// 用户调整时的处理
+document.getElementById('snow-speed').addEventListener('input', function(e) {
+    const speedValue = e.target.value;
+    document.getElementById('speed-value').textContent = speedValue;
+    
+    // 更新雪花动画速度
+    updateSnowflakeSpeed(speedValue);
+    
+    // 或者重新初始化雪花
+    initSnowfall(speedValue);
+});
+</script>
